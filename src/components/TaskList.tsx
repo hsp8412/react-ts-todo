@@ -9,11 +9,9 @@ interface Props {
 
 const TaskList: React.FC<Props> = ({ todos, setTodos }) => {
   return (
-    <div className="tasks">
+    <div className="todos">
       {todos.map((todo) => (
-        <li>
-          <TaskCard setTodos={setTodos} todo={todo} todos={todos} />
-        </li>
+        <TaskCard key={todo.id} setTodos={setTodos} todo={todo} todos={todos} />
       ))}
     </div>
   );
